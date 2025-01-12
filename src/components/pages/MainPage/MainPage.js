@@ -5,7 +5,7 @@ import RandomChar from "../../randomChar/RandomChar";
 import SearchCharForm from '../../searchCharForm/searchCharForm';
 import decoration from "../../../resources/img/vision.png";
 import { useState } from "react";
-import {Helmet} from "react-helmet";
+import {Helmet, HelmetProvider} from 'react-helmet-async';
 
 
 const MainPage = () => {
@@ -17,7 +17,7 @@ const MainPage = () => {
     }
 
     return (
-        <>
+        <HelmetProvider>
         <Helmet>
         <meta
         name="description"
@@ -33,7 +33,7 @@ const MainPage = () => {
             </div>
             </div>
             <img className="bg-decoration" src={decoration} alt="vision"/>
-        </>
+        </HelmetProvider>
     )
 }
 

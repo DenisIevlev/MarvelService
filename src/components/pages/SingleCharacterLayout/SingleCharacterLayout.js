@@ -1,11 +1,11 @@
 import './SingleCharacterLayout.scss';
-import {Helmet} from 'react-helmet';
+import {Helmet, HelmetProvider} from 'react-helmet-async';
 
 const SingleCharacterLayout = ({ data }) => {
     const { name, description, thumbnail } = data;
 
     return (
-        <>
+        <HelmetProvider>
         <Helmet>
         <meta name="Character" 
         content="Page with Character"/>
@@ -18,7 +18,7 @@ const SingleCharacterLayout = ({ data }) => {
                 <p className="single-character__descr">{description}</p>
             </div>
         </div>
-        </>
+        </HelmetProvider>
     );
 }
 
